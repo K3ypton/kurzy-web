@@ -2,11 +2,9 @@ import React, {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 import { useCoursesContext } from '../context/courses_context';
-import StarRating from '../components/StarRating';
-import {MdInfo} from "react-icons/md";
+
 import {TbWorld} from "react-icons/tb";
-import {FaShoppingCart} from "react-icons/fa";
-import {RiClosedCaptioningFill} from "react-icons/ri";
+
 import {BiCheck} from "react-icons/bi";
 import {Link} from "react-router-dom";
 import { useCartContext } from '../context/cart_context';
@@ -18,7 +16,7 @@ const SingleCoursePage = () => {
 
   useEffect(() => {
     fetchSingleCourse(id);
-  }, []);
+  }, );
 
   const {id: courseID, category, image, course_name, description,/* rating_count, rating_star,students,updated_date, actual_price,*/  creator, lang,  discounted_price, what_you_will_learn: learnItems, content} = single_course;
 
