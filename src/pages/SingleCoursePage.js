@@ -6,19 +6,17 @@ import { useCoursesContext } from '../context/courses_context';
 import {TbWorld} from "react-icons/tb";
 
 import {BiCheck} from "react-icons/bi";
-import {Link} from "react-router-dom";
-import { useCartContext } from '../context/cart_context';
 
 const SingleCoursePage = () => {
   const {id} = useParams();
   const {fetchSingleCourse, single_course} = useCoursesContext();
-  const {addToCart} = useCartContext();
+
 
   useEffect(() => {
     fetchSingleCourse(id);
   }, );
 
-  const {id: courseID, category, image, course_name, description,/* rating_count, rating_star,students,updated_date, actual_price,*/  creator, lang,  discounted_price, what_you_will_learn: learnItems, content} = single_course;
+  const {id: courseID, category, image, course_name, description,  creator, lang,   what_you_will_learn: learnItems, content} = single_course;
 
   return (
     <SingleCourseWrapper>
@@ -51,11 +49,9 @@ const SingleCoursePage = () => {
 
          
 
-          <div className='course-btn'>
-            <Link to = "/cart" className='add-to-cart-btn d-inline-block fw-7 bg-purple' onClick={() => addToCart(courseID, image, course_name, creator, discounted_price, category)}>
-             prejsť na Kurz
-            </Link>
-          </div>
+         <div className='course-btn'>
+          <a href={description} target="_blank" rel="noopener noreferrer" className='add-to-cart-btn d-inline-block fw-7 bg-purple'>Prejsť na kurz</a>
+        </div>
         </div>
       </div>
 

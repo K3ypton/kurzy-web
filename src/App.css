@@ -45,7 +45,7 @@ a:hover{
 }
 h1, h2, h3, h4, h5, h6{
     letter-spacing: var(--spacing);
-    text-transform: capitalize;
+    
 }
 img{
     width: 100%;
@@ -203,6 +203,8 @@ input, textarea, select{
 .mx-auto{
     margin-right: auto;
     margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* opacity */
