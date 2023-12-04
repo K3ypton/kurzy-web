@@ -16,7 +16,7 @@ const SingleCoursePage = () => {
     fetchSingleCourse(id);
   }, );
 
-  const {id: courseID, category, image, course_name, description,  creator, lang,   what_you_will_learn: learnItems, content} = single_course;
+  const {id:  category, image, course_name, description,  creator, lang,   what_you_will_learn: learnItems, content} = single_course;
 
   return (
     <SingleCourseWrapper>
